@@ -16,7 +16,7 @@ with open("imagenet_classes.txt", "r") as f:
 
 convert_tensor = T.ToTensor()
 transforms = nn.Sequential(
-            T.Resize([256, ]),  # We use single int value inside a list due to torchscript type restrictions
+            T.Resize([256, ]),
             T.CenterCrop(224),
             T.ConvertImageDtype(torch.float),
             T.Normalize([0.485, 0.456, 0.406], [0.229, 0.224, 0.225])
